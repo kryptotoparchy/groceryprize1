@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GroceryPrize - Win a $750 Costco Gift Card</title>
+  <title>$750 Costco Gift Card</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -17,230 +17,118 @@
     :root {
       --costco-blue: #005DAA;
       --costco-red: #E31837;
-      --primary: #005DAA;
-      --primary-light: #e0f2fe;
       --white: #ffffff;
-      --gray-50: #f9fafb;
-      --gray-100: #f3f4f6;
-      --gray-200: #e5e7eb;
-      --gray-500: #6b7280;
-      --gray-700: #374151;
-      --gray-900: #111827;
+      --gray-100: #f5f5f5;
+      --gray-400: #9ca3af;
+      --gray-600: #4b5563;
     }
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--gray-50);
-      color: var(--gray-900);
-      line-height: 1.5;
+      background: var(--gray-100);
       min-height: 100vh;
-    }
-
-    /* Header */
-    .header {
-      background: var(--gray-50);
-      padding: 12px 20px;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-bottom: 1px solid var(--gray-200);
+      padding: 20px;
     }
 
+    .card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 32px 28px;
+      max-width: 340px;
+      width: 100%;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    /* Costco Logo */
     .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      margin: 0 auto 16px;
     }
 
-    .logo-icon {
-      width: 40px;
-      height: 40px;
-      background: var(--primary);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .logo-icon svg {
-      width: 20px;
-      height: 20px;
-      fill: white;
-    }
-
-    .logo-text {
-      font-weight: 700;
-      font-size: 22px;
-      color: var(--primary);
-    }
-
-    /* Main Container */
-    .main {
-      max-width: 480px;
-      margin: 0 auto;
-      padding: 16px 20px 100px;
-    }
-
-    /* Gift Card */
-    .gift-card-container {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 16px;
-      padding: 10px;
-    }
-
-    .gift-card {
-      width: 240px;
-      height: 150px;
-      background: linear-gradient(145deg, #ffffff 0%, #f5f5f5 100%);
-      border-radius: 14px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 
-        0 16px 50px rgba(0,0,0,0.12),
-        0 6px 20px rgba(0,0,0,0.08);
-      position: relative;
-      overflow: hidden;
-      transform: rotate(-2deg);
-      transition: transform 0.3s ease;
-    }
-
-    .gift-card:hover {
-      transform: rotate(0deg) scale(1.02);
-    }
-
-    .gift-card::before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 6px;
-      background: linear-gradient(90deg, #E31837 0%, #E31837 33%, #fff 33%, #fff 66%, #005DAA 66%, #005DAA 100%);
-    }
-
-    .gift-card::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: #f0c14b;
-    }
-
-    .gift-card-logo {
-      color: var(--costco-red);
-      font-weight: 800;
-      font-size: 26px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+    .logo-costco {
+      font-family: 'Arial Black', Arial, sans-serif;
+      font-size: 36px;
+      font-weight: 900;
       font-style: italic;
-    }
-
-    .gift-card-tagline {
-      font-size: 7px;
       color: var(--costco-red);
       letter-spacing: 1px;
-      margin-top: -2px;
-      margin-bottom: 6px;
-    }
-
-    .gift-card-amount {
-      color: #1a7f37;
-      font-size: 44px;
-      font-weight: 800;
       line-height: 1;
     }
 
-    .gift-card-label {
-      font-size: 8px;
-      color: #1a7f37;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-top: 4px;
-      border: 1px solid #1a7f37;
-      padding: 2px 6px;
+    .logo-wholesale {
+      font-family: 'Arial', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--costco-blue);
+      letter-spacing: 3px;
+      margin-top: 2px;
+    }
+
+    .logo-bar {
+      display: flex;
+      width: 140px;
+      height: 4px;
+      margin: 8px auto 0;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .logo-bar span {
+      flex: 1;
+    }
+
+    .logo-bar .red { background: var(--costco-red); }
+    .logo-bar .white { background: #ccc; }
+    .logo-bar .blue { background: var(--costco-blue); }
+
+    .divider {
+      width: 50px;
+      height: 3px;
+      background: var(--gray-100);
+      margin: 16px auto;
       border-radius: 2px;
     }
 
-    /* Headline */
-    .headline {
-      text-align: center;
-      font-size: 22px;
-      font-weight: 700;
-      line-height: 1.3;
-      margin-bottom: 8px;
-      color: var(--gray-900);
-    }
-
-    .headline .amount {
+    /* Amount */
+    .amount {
+      font-size: 48px;
+      font-weight: 800;
       color: var(--costco-blue);
+      margin-bottom: 4px;
     }
 
-    .headline .brand {
-      color: var(--costco-red);
-    }
-
-    /* Trust Badges */
-    .trust-badges {
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      font-size: 11px;
-      color: var(--gray-500);
-      margin-bottom: 14px;
-    }
-
-    .trust-badges span {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .trust-badges svg {
-      width: 12px;
-      height: 12px;
-      fill: var(--gray-500);
-    }
-
-    /* Steps - Combined Box */
-    .steps-section {
-      margin-bottom: 14px;
-    }
-
-    .steps-title {
+    .gift-text {
       font-size: 14px;
       font-weight: 600;
-      text-align: center;
-      margin-bottom: 10px;
-      color: var(--gray-900);
+      color: var(--gray-600);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 28px;
     }
 
-    .steps-box {
-      background: var(--white);
-      border: 1px solid var(--gray-200);
+    /* Steps */
+    .steps {
+      background: var(--gray-100);
       border-radius: 12px;
-      padding: 14px 16px;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+      text-align: left;
     }
 
     .step {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       padding: 8px 0;
     }
 
-    .step:not(:last-child) {
-      border-bottom: 1px solid var(--gray-100);
-    }
-
     .step-number {
-      width: 22px;
-      height: 22px;
-      background: var(--primary);
+      width: 20px;
+      height: 20px;
+      background: var(--costco-blue);
       color: white;
       border-radius: 50%;
       display: flex;
@@ -253,292 +141,102 @@
 
     .step-text {
       font-size: 13px;
-      color: var(--gray-700);
-      font-weight: 500;
+      color: var(--gray-600);
     }
 
-    /* CTA */
-    .cta-section {
-      margin-bottom: 16px;
-    }
-
+    /* CTA Button */
     .cta-btn {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
       width: 100%;
-      background: var(--primary);
+      background: var(--costco-blue);
       color: white;
       font-family: 'Inter', sans-serif;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 600;
-      padding: 16px 24px;
+      padding: 16px;
       border: none;
-      border-radius: 12px;
+      border-radius: 10px;
       cursor: pointer;
       text-decoration: none;
-      text-align: center;
-      transition: background 0.2s, transform 0.2s;
+      transition: background 0.2s;
     }
 
     .cta-btn:hover {
       background: #004a8a;
-      transform: translateY(-1px);
     }
 
     .cta-btn svg {
-      width: 18px;
-      height: 18px;
+      width: 16px;
+      height: 16px;
       fill: white;
     }
 
-    .supporting-text {
-      text-align: center;
-      font-size: 12px;
-      color: var(--gray-500);
-      margin-top: 10px;
-    }
-
-    /* FAQ */
-    .faq-section {
-      margin-top: 24px;
-    }
-
-    .faq-title {
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 10px;
-      text-align: center;
-    }
-
-    .faq-item {
-      background: var(--white);
-      border: 1px solid var(--gray-200);
-      border-radius: 10px;
-      margin-bottom: 6px;
-      overflow: hidden;
-    }
-
-    .faq-question {
-      width: 100%;
-      background: none;
-      border: none;
-      padding: 12px 14px;
-      font-family: 'Inter', sans-serif;
-      font-size: 13px;
-      font-weight: 500;
-      text-align: left;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: var(--gray-700);
-    }
-
-    .faq-question svg {
-      width: 16px;
-      height: 16px;
-      fill: var(--gray-500);
-      transition: transform 0.2s;
-    }
-
-    .faq-item.open .faq-question svg {
-      transform: rotate(180deg);
-    }
-
-    .faq-answer {
-      display: none;
-      padding: 0 14px 12px;
-      font-size: 12px;
-      color: var(--gray-500);
-      line-height: 1.6;
-    }
-
-    .faq-item.open .faq-answer {
-      display: block;
-    }
-
-    /* Footer */
-    .footer {
-      text-align: center;
+    /* Disclaimer */
+    .disclaimer {
+      margin-top: 16px;
       font-size: 10px;
-      color: var(--gray-500);
-      margin-top: 24px;
-      line-height: 1.6;
+      color: var(--gray-400);
+      line-height: 1.5;
     }
 
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      margin-top: 6px;
-    }
-
-    .footer-links a {
-      color: var(--gray-500);
-      text-decoration: none;
-    }
-
-    .footer-links a:hover {
+    .disclaimer a {
+      color: var(--gray-400);
       text-decoration: underline;
-    }
-
-    /* Sticky CTA */
-    .sticky-cta {
-      display: none;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: var(--white);
-      padding: 10px 20px;
-      box-shadow: 0 -2px 10px rgba(0,0,0,0.08);
-      z-index: 100;
-    }
-
-    @media (max-width: 480px) {
-      .sticky-cta {
-        display: block;
-      }
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
+  <div class="card">
+    <!-- Costco Logo -->
     <div class="logo">
-      <div class="logo-icon">
-        <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+      <div class="logo-costco">COSTCO</div>
+      <div class="logo-wholesale">WHOLESALE</div>
+      <div class="logo-bar">
+        <span class="red"></span>
+        <span class="white"></span>
+        <span class="blue"></span>
       </div>
-      <span class="logo-text">GroceryPrize</span>
     </div>
-  </header>
-
-  <!-- Main Content -->
-  <main class="main">
-    <!-- Gift Card -->
-    <section class="gift-card-container">
-      <div class="gift-card">
-        <div class="gift-card-logo">COSTCO</div>
-        <div class="gift-card-tagline">WHOLESALE</div>
-        <div class="gift-card-amount">$750</div>
-        <div class="gift-card-label">GIFT CARD</div>
+    
+    <div class="divider"></div>
+    
+    <!-- Amount -->
+    <div class="amount">$750</div>
+    <div class="gift-text">Costco Gift Card</div>
+    
+    <!-- Steps -->
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-text">Click the Button Below</div>
       </div>
-    </section>
-
-    <!-- Headline -->
-    <h1 class="headline">
-      Win a <span class="amount">$750</span> <span class="brand">Costco</span> Grocery Gift Card
-    </h1>
-
-    <!-- Trust Badges -->
-    <div class="trust-badges">
-      <span>
-        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-        No purchase required
-      </span>
-      <span>
-        <svg viewBox="0 0 24 24"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
-        Mobile friendly
-      </span>
-      <span>
-        <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
-        Secure
-      </span>
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-text">Enter Email and Basic Info</div>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-text">Complete 3-5 Recommended Deals</div>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <div class="step-text">Claim Reward in Your Email</div>
+      </div>
     </div>
-
-    <!-- Steps - Combined Box -->
-    <section class="steps-section">
-      <h2 class="steps-title">How to Claim Your Reward</h2>
-      <div class="steps-box">
-        <div class="step">
-          <div class="step-number">1</div>
-          <div class="step-text">Tap "Start Now"</div>
-        </div>
-        <div class="step">
-          <div class="step-number">2</div>
-          <div class="step-text">Enter your email & basic info</div>
-        </div>
-        <div class="step">
-          <div class="step-number">3</div>
-          <div class="step-text">Complete 3-5 recommended deals</div>
-        </div>
-        <div class="step">
-          <div class="step-number">4</div>
-          <div class="step-text">Unlock your $750 Costco reward</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA - Direct Link (no JS) -->
-    <section class="cta-section">
-      <a href="https://glctrk.org/aff_c?offer_id=941&aff_id=164706" class="cta-btn">
-        START NOW
-        <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
-      </a>
-      <p class="supporting-text">Complete a few quick partner deals to unlock your entry. Most users finish in 10–20 minutes.</p>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq-section">
-      <h3 class="faq-title">Frequently Asked Questions</h3>
-      <div class="faq-item">
-        <button class="faq-question">
-          What are deals?
-          <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
-        </button>
-        <div class="faq-answer">
-          Deals are partner offers like free trials, app downloads, or surveys from our sponsors that help fund the rewards program.
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">
-          How many deals are required?
-          <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
-        </button>
-        <div class="faq-answer">
-          You need to complete at least 5 partner deals to unlock your reward entry.
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">
-          Is this free?
-          <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
-        </button>
-        <div class="faq-answer">
-          Yes, participation is free. No purchase is necessary to enter. Some partner deals may require a purchase but free options are always available.
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <p>No purchase necessary. Must be 18+. Completion of partner offers required. Not affiliated with Costco, Google, Apple, or Meta.</p>
-      <div class="footer-links">
-        <a href="#">Terms</a>
-        <a href="#">Privacy</a>
-        <a href="#">Contact</a>
-      </div>
-    </footer>
-  </main>
-
-  <!-- Sticky CTA - Direct Link -->
-  <div class="sticky-cta">
+    
+    <!-- CTA Button -->
     <a href="https://glctrk.org/aff_c?offer_id=941&aff_id=164706" class="cta-btn">
-      START NOW
+      Claim Now
       <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
     </a>
+    
+    <!-- Disclaimer -->
+    <p class="disclaimer">
+      By continuing you accept our <a href="#">Terms</a> & <a href="#">Privacy</a>
+    </p>
   </div>
-
-  <script>
-    // FAQ Accordion
-    document.querySelectorAll('.faq-question').forEach(button => {
-      button.addEventListener('click', () => {
-        const item = button.parentElement;
-        item.classList.toggle('open');
-      });
-    });
-  </script>
 </body>
 </html>
