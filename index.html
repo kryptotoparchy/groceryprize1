@@ -1,328 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GroceryPrize - $750 Costco Gift Card</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    :root {
-      --costco-blue: #005DAA;
-      --costco-red: #E31837;
-      --white: #ffffff;
-      --gray-50: #f8f9fa;
-      --gray-100: #f1f3f4;
-      --gray-400: #9aa0a6;
-      --gray-600: #5f6368;
-      --gray-900: #202124;
-    }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--white);
-      color: var(--gray-900);
-      line-height: 1.5;
-      min-height: 100vh;
-    }
-
-    .container {
-      max-width: 480px;
-      margin: 0 auto;
-      padding: 40px 24px 100px;
-    }
-
-    /* Logo */
-    .logo {
-      text-align: center;
-      margin-bottom: 12px;
-    }
-
-    .logo-text {
-      font-size: 36px;
-      font-weight: 800;
-      letter-spacing: -1px;
-    }
-
-    .logo-text .red {
-      color: var(--costco-red);
-    }
-
-    .logo-text .blue {
-      color: var(--costco-blue);
-    }
-
-    .logo-bar {
-      display: flex;
-      width: 120px;
-      height: 4px;
-      margin: 8px auto 0;
-      gap: 4px;
-    }
-
-    .logo-bar span {
-      flex: 1;
-      border-radius: 2px;
-    }
-
-    .logo-bar .bar-red { background: var(--costco-red); }
-    .logo-bar .bar-blue { background: var(--costco-blue); }
-
-    /* Headline */
-    .headline {
-      text-align: center;
-      margin-bottom: 8px;
-    }
-
-    .headline h1 {
-      font-size: 28px;
-      font-weight: 700;
-      color: var(--gray-900);
-      margin-bottom: 12px;
-    }
-
-    .headline p {
-      font-size: 16px;
-      color: var(--gray-600);
-      line-height: 1.5;
-    }
-
-    /* Steps */
-    .steps {
-      margin: 32px 0;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .step {
-      background: var(--gray-50);
-      border-radius: 12px;
-      padding: 18px 20px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .step-number {
-      width: 40px;
-      height: 40px;
-      background: var(--costco-red);
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      font-weight: 700;
-      flex-shrink: 0;
-    }
-
-    .step-text {
-      font-size: 16px;
-      color: var(--gray-900);
-      font-weight: 500;
-    }
-
-    /* CTA Button */
-    .cta-btn {
-      display: block;
-      width: 100%;
-      background: var(--costco-blue);
-      color: white;
-      font-family: 'Inter', sans-serif;
-      font-size: 18px;
-      font-weight: 700;
-      padding: 18px 24px;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      text-decoration: none;
-      text-align: center;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: background 0.2s;
-    }
-
-    .cta-btn:hover {
-      background: #004a8a;
-    }
-
-    /* Disclaimer */
-    .disclaimer {
-      text-align: center;
-      margin-top: 16px;
-      font-size: 13px;
-      color: var(--gray-600);
-      line-height: 1.5;
-    }
-
-    /* FAQ */
-    .faq {
-      margin-top: 40px;
-      border-top: 1px solid var(--gray-100);
-      padding-top: 24px;
-    }
-
-    .faq-item {
-      border-bottom: 1px solid var(--gray-100);
-    }
-
-    .faq-question {
-      width: 100%;
-      background: none;
-      border: none;
-      padding: 16px 0;
-      font-family: 'Inter', sans-serif;
-      font-size: 15px;
-      font-weight: 500;
-      text-align: left;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: var(--gray-900);
-    }
-
-    .faq-question svg {
-      width: 20px;
-      height: 20px;
-      fill: var(--gray-400);
-      transition: transform 0.2s;
-    }
-
-    .faq-item.open .faq-question svg {
-      transform: rotate(180deg);
-    }
-
-    .faq-answer {
-      display: none;
-      padding: 0 0 16px;
-      font-size: 14px;
-      color: var(--gray-600);
-      line-height: 1.6;
-    }
-
-    .faq-item.open .faq-answer {
-      display: block;
-    }
-
-    /* Sticky CTA */
-    .sticky-cta {
-      display: none;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: var(--white);
-      padding: 12px 24px;
-      box-shadow: 0 -4px 12px rgba(0,0,0,0.1);
-      z-index: 100;
-    }
-
-    @media (max-width: 480px) {
-      .sticky-cta {
-        display: block;
-      }
-
-      .container {
-        padding-bottom: 120px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GroceryPrize — Your Promo Code</title>
+<style>
+  :root{
+    --red:#E23744;--red-dark:#C42A36;--blue:#2452A8;--blue-dark:#1B3E85;
+    --ink:#1B2430;--muted:#667085;--card:#FFF;--line:#E3E7EF;
+  }
+  *{box-sizing:border-box}html,body{height:100%}
+  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;position:relative;overflow:hidden;background:linear-gradient(165deg,#4FC3E8 0%,#3FB8DE 35%,#4BC7C4 70%,#5AD0BE 100%);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink)}
+  .confetti{position:absolute;display:block;z-index:0;pointer-events:none}.rect{border-radius:3px}.circle{border-radius:50%}
+  .card{position:relative;z-index:1;width:100%;max-width:420px;background:#fff;border-radius:20px;padding:36px 28px 28px;box-shadow:0 20px 50px rgba(27,36,48,.18),0 2px 8px rgba(27,36,48,.08);text-align:center}
+  .logo{font-size:30px;font-weight:800;letter-spacing:-.5px;margin-bottom:6px}.g{color:var(--red)}.p{color:var(--blue)}
+  .logo-rule{display:flex;justify-content:center;gap:6px;margin-bottom:26px}.logo-rule span{height:4px;width:46px;border-radius:2px}.r{background:var(--red)}.b{background:var(--blue)}
+  h1{font-size:24px;margin:0 0 6px}.sub{color:var(--muted);font-size:15px;margin:0 0 22px;line-height:1.5}
+  .code-box{border:1.5px dashed var(--blue);background:#F5F8FE;border-radius:14px;padding:16px 14px;margin-bottom:18px;display:flex;align-items:center;justify-content:center;overflow-x:auto}
+  .code-box code{font-family:"SF Mono","Courier New",monospace;font-weight:700;color:var(--blue-dark);font-size:clamp(16px,5.2vw,22px);letter-spacing:1px;white-space:nowrap}
+  .copy-btn{width:100%;border:none;border-radius:12px;padding:14px 16px;font-size:16px;font-weight:700;color:#fff;background:var(--red);cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px}
+  .copy-btn:hover{background:var(--red-dark)}.copy-btn:active{transform:scale(.98)}.copy-btn.copied{background:#1E8E5A}
+  .copy-btn svg{width:18px;height:18px;flex-shrink:0}
+  .details{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);text-align:left}
+  .details h2{font-size:13px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin:0 0 10px}
+  .details ul{margin:0;padding-left:18px;font-size:14px;line-height:1.7}
+</style>
 </head>
 <body>
-  <div class="container">
-    <!-- Logo -->
-    <div class="logo">
-      <div class="logo-text">
-        <span class="red">Grocery</span><span class="blue">Prize</span>
-      </div>
-      <div class="logo-bar">
-        <span class="bar-red"></span>
-        <span class="bar-blue"></span>
-      </div>
-    </div>
-
-    <!-- Headline -->
-    <div class="headline">
-      <h1>Complete Your Registration</h1>
-      <p>Follow these simple steps to claim your $750 Costco gift card</p>
-    </div>
-
-    <!-- Steps -->
-    <div class="steps">
-      <div class="step">
-        <div class="step-number">1</div>
-        <div class="step-text">Click on Claim Now</div>
-      </div>
-      <div class="step">
-        <div class="step-number">2</div>
-        <div class="step-text">Enter your email and basic info</div>
-      </div>
-      <div class="step">
-        <div class="step-number">3</div>
-        <div class="step-text">Complete 3-5 sponsored deals</div>
-      </div>
-      <div class="step">
-        <div class="step-number">4</div>
-        <div class="step-text">Enjoy your $750 Costco gift card!</div>
-      </div>
-    </div>
-
-    <!-- CTA Button -->
-    <a href="https://glctrk.org/aff_c?offer_id=941&aff_id=164706" class="cta-btn">
-      Claim Now
-    </a>
-
-    <!-- Disclaimer -->
-    <p class="disclaimer">
-      By clicking Claim Now, you agree to complete the required steps to receive your gift card.
-    </p>
-
-    <!-- FAQ -->
-    <div class="faq">
-      <div class="faq-item">
-        <button class="faq-question">
-          What are deals?
-          <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
-        </button>
-        <div class="faq-answer">
-          Deals are partner offers like free trials, app downloads, or surveys from our sponsors that help fund the rewards program.
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">
-          How many deals do I have to do?
-          <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
-        </button>
-        <div class="faq-answer">
-          You need to complete 3-5 partner deals to unlock your reward.
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Sticky CTA -->
-  <div class="sticky-cta">
-    <a href="https://glctrk.org/aff_c?offer_id=941&aff_id=164706" class="cta-btn">
-      Claim Now
-    </a>
-  </div>
-
-  <script>
-    document.querySelectorAll('.faq-question').forEach(button => {
-      button.addEventListener('click', () => {
-        button.parentElement.classList.toggle('open');
-      });
-    });
-  </script>
+<div class="card">
+<div class="logo"><span class="g">Grocery</span><span class="p">Prize</span></div>
+<div class="logo-rule"><span class="r"></span><span class="b"></span></div>
+<h1>Your promo code is ready</h1>
+<p class="sub">Copy the code below and apply it at checkout on Costco store.</p>
+<div class="code-box"><code id="promoCode">Q7KM9XTR4VPL82CW</code></div>
+<button class="copy-btn" id="copyBtn" onclick="copyCode()">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span id="btnLabel">Copy code</span>
+</button>
+<div class="details">
+<h2>How to redeem</h2>
+<ul>
+<li>Copy the code above</li>
+<li>Paste it in the promo code field at Costco checkout</li>
+<li>Discount applies automatically if your order qualifies</li>
+</ul>
+</div>
+</div>
+<script>
+function copyCode(){
+ const code=document.getElementById('promoCode').innerText;
+ const btn=document.getElementById('copyBtn');
+ const label=document.getElementById('btnLabel');
+ function showCopied(){label.textContent='Copied!';btn.classList.add('copied');setTimeout(()=>{label.textContent='Copy code';btn.classList.remove('copied');},1800);}
+ function fallbackCopy(){const t=document.createElement('textarea');t.value=code;t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.focus();t.select();try{document.execCommand('copy');showCopied();}catch(e){}document.body.removeChild(t);}
+ if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(code).then(showCopied).catch(fallbackCopy);}else{fallbackCopy();}
+}
+</script>
 </body>
 </html>
